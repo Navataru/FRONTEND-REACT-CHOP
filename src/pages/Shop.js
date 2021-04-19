@@ -8,6 +8,7 @@ import DeviceList from "../components/DeviceList";
 import {observer} from "mobx-react-lite";
 import {Context} from "../index";
 import {fetchBrands, fetchDevices, fetchTypes} from "../http/deviceAPI";
+import {fetchBasket} from "../http/basketAPI";
 import Pages from "../components/Pages";
 
 const Shop = observer(() => {

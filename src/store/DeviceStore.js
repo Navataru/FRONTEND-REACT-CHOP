@@ -1,16 +1,26 @@
 import {makeAutoObservable} from "mobx";
 
 export default class DeviceStore {
+
     constructor() {
         this._types = []
         this._brands = []
         this._devices = []
+        this._baskets = []
         this._selectedType = {}
         this._selectedBrand = {}
         this._page = 1
         this._totalCount = 0
         this._limit = 16
         makeAutoObservable(this)
+    }
+
+    get baskets() {
+        return this._baskets;
+    }
+
+    setBaskets(value) {
+        this._baskets = value;
     }
 
     setTypes(types) {
