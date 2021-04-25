@@ -8,10 +8,10 @@ import {getOneUser} from "../http/userAPI";
 
 const DeviceItem = ({device}) => {
 
-    const[user, setUsers] = React.useState([])
-    useEffect(() => {
-        getOneUser(device.userId).then(data => setUsers(data))
-    }, [])
+    // const[user, setUsers] = React.useState([])
+    // useEffect(() => {
+    //     getOneUser(device.userId).then(data => setUsers(data))
+    // }, [])
 
     const history = useHistory()
     return (
@@ -25,7 +25,7 @@ const DeviceItem = ({device}) => {
                         <Image width={18} height={18} src={star}/>
                     </div>
                 </div>
-               <div>{user}</div>
+               {/*<div>{user}</div>*/}
             </Card>
         </Col>
     );
