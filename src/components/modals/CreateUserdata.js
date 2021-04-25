@@ -6,7 +6,7 @@ import {createDevice, fetchBrands, fetchDevices, fetchTypes} from "../../http/de
 import {check} from "../../http/userAPI";
 import {observer} from "mobx-react-lite";
 
-const CreateDevice = observer(({show, onHide}) => {
+const CreateUserdata = observer(({show, onHide}) => {
     const {device} = useContext(Context)
     const {user} = useContext(Context)
 
@@ -158,4 +158,4 @@ const CreateDevice = observer(({show, onHide}) => {
     );
 });
 
-export default CreateDevice;
+export default CreateUserdata;
