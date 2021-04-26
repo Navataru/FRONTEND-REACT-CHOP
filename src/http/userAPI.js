@@ -19,6 +19,11 @@ export const check = async () => {
     return jwt_decode(data.token)
 }
 
+export const createUserdata = async (userdata) => {
+    const {data} = await $host.post('api/userdata', userdata)
+    return data
+}
+
 // export const checkUsers = async () => {
 //     const {data} = await $authHost.get('api/user/users' )
 //     localStorage.setItem('user', data.user)
