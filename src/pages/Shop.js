@@ -12,7 +12,6 @@ import Pages from "../components/Pages";
 
 const Shop = observer(() => {
     const {device} = useContext(Context)
-
     useEffect(() => {
         fetchTypes().then(data => device.setTypes(data))
         fetchBrands().then(data => device.setBrands(data))
@@ -20,10 +19,6 @@ const Shop = observer(() => {
             device.setDevices(data.rows)
             device.setTotalCount(data.count)
         })
-        // checkUser().then(data => user.setUsers(data))
-        // getOneUser(3).then(data => user.setUsers(data))
-
-
     }, [])
 
     useEffect(() => {

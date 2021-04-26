@@ -20,7 +20,7 @@ const CreateDevice = observer(({show, onHide}) => {
     useEffect(() => {
         fetchTypes().then(data => device.setTypes(data))
         fetchBrands().then(data => device.setBrands(data))
-        check().then(data => user.setUser(data))
+        // check().then(data => user.setUser(data))
     }, [])
 
     // const addInfo = () => {

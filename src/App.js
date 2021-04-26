@@ -4,7 +4,7 @@ import AppRouter from "./components/AppRouter";
 import NavBar from "./components/NavBar";
 import {observer} from "mobx-react-lite";
 import {Context} from "./index";
-import {check} from "./http/userAPI";
+import {check, userRole} from "./http/userAPI";
 import {Spinner} from "react-bootstrap";
 import {fetchBrands, fetchTypes} from "./http/deviceAPI";
 
@@ -16,8 +16,11 @@ const App = observer(() => {
         check().then(data => {
             user.setUser(true)
             user.setIsAuth(true)
+            user.setUser(data)
         }).finally(() => setLoading(false))
 
+        //check().then(data => user.setUser(data))
+        // userRole().then(data => user.isUserRole(data))
         // checkUser().then(data => {
         //     user.setUsers(true)
         // }).finally(() => setLoading(false))

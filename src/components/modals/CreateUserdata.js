@@ -18,7 +18,6 @@ const CreateUserdata = observer(({show, onHide}) => {
     useEffect(() => {
         fetchTypes().then(data => device.setTypes(data))
         fetchBrands().then(data => device.setBrands(data))
-        check().then(data => user.setUser(data))
     }, [])
 
     const addInfo = () => {
@@ -34,15 +33,6 @@ const CreateUserdata = observer(({show, onHide}) => {
     const selectFile = e => {
         setFile(e.target.files[0])
     }
-
-    // const addDevice = () => {
-    //     const formData = new FormData()
-    //     formData.append('brandId', device.selectedBrand.id)
-    //     formData.append('typeId', device.selectedType.id)
-    //     formData.append('userId', user.user.id)
-    //     // formData.append('info', JSON.stringify(info))
-    //     createDevice(formData).then(data => onHide())
-    // }
 
     const addUserdata = () => {
         const formData = new FormData()
@@ -93,6 +83,7 @@ const CreateUserdata = observer(({show, onHide}) => {
                     {/*        )}*/}
                     {/*    </Dropdown.Menu>*/}
                     {/*</Dropdown>*/}
+
                     <Form.Control
                         value={name}
                         onChange={e => setName(e.target.value)}

@@ -1,9 +1,17 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import {Button, Container} from "react-bootstrap";
 import CreateBrand from "../components/modals/CreateBrand";
 import CreateType from "../components/modals/CreateType";
+import {Context} from "../index";
+import {check} from "../http/userAPI"
 
 const Champ = () => {
+
+    // const {user} = useContext(Context)
+    //
+    // useEffect(() => {
+    //     check().then(data => user.setUser(data))
+    // }, [])
 
     const [brandVisible, setBrandVisible] = useState(false)
     const [typeVisible, setTypeVisible] = useState(false)
