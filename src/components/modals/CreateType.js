@@ -1,13 +1,15 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import Modal from "react-bootstrap/Modal";
 import {Form, Button} from "react-bootstrap";
 import {createType} from "../../http/deviceAPI";
+import {Context} from "../../index";
 
 const CreateType = ({show, onHide}) => {
     const [value, setValue] = useState('')
+    const {user} = useContext(Context)
 
     const addType = () => {
-        createType({name: value}).then(data => {
+        createType({name: value, role: user.user.role}).then(data => {
             setValue('')
             onHide()
         })

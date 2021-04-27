@@ -1,13 +1,15 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import Modal from "react-bootstrap/Modal";
 import {Button, Form} from "react-bootstrap";
 import {createBrand, createType} from "../../http/deviceAPI";
+import {Context} from "../../index";
 
 const CreateBrand = ({show, onHide}) => {
     const [value, setValue] = useState('')
+    const {user} = useContext(Context)
 
     const addBrand = () => {
-        createBrand({name: value}).then(data => {
+        createBrand({name: value, role: user.user.role}).then(data => {
             setValue('')
             onHide()
         })
