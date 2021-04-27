@@ -7,6 +7,7 @@ import {Context} from "./index";
 import {check, userRole} from "./http/userAPI";
 import {Spinner} from "react-bootstrap";
 import {fetchBrands, fetchTypes} from "./http/deviceAPI";
+//import {userData} from "./http/userDataAPI";
 
 const App = observer(() => {
     const {user} = useContext(Context)
@@ -19,7 +20,7 @@ const App = observer(() => {
             user.setUser(data)
         }).finally(() => setLoading(false))
 
-        //check().then(data => user.setUser(data))
+
         // userRole().then(data => user.isUserRole(data))
         // checkUser().then(data => {
         //     user.setUsers(true)

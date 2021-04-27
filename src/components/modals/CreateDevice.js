@@ -5,10 +5,11 @@ import {Context} from "../../index";
 import {createDevice, fetchBrands, fetchDevices, fetchTypes} from "../../http/deviceAPI";
 import {check} from "../../http/userAPI";
 import {observer} from "mobx-react-lite";
+import {userData} from "../../http/userDataAPI";
 
 const CreateDevice = observer(({show, onHide}) => {
     const {device} = useContext(Context)
-    const {user} = useContext(Context)
+    const {user, userdata} = useContext(Context)
 
     // const {device} = useContext(Context)
     // const [name, setName] = useState('')
@@ -20,6 +21,7 @@ const CreateDevice = observer(({show, onHide}) => {
     useEffect(() => {
         fetchTypes().then(data => device.setTypes(data))
         fetchBrands().then(data => device.setBrands(data))
+        userData(user.user.id).then(data => userdata.setUserData(data))
         // check().then(data => user.setUser(data))
     }, [])
 
@@ -42,6 +44,7 @@ const CreateDevice = observer(({show, onHide}) => {
         formData.append('brandId', device.selectedBrand.id)
         formData.append('typeId', device.selectedType.id)
         formData.append('userId', user.user.id)
+        formData.append('userdatumId', userdata.userData.id)
         // formData.append('info', JSON.stringify(info))
         createDevice(formData).then(data => onHide())
     }
