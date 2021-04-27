@@ -29,20 +29,21 @@ const Admin = () => {
             {/*>*/}
             {/*    Add map*/}
             {/*</Button>*/}
-            <Button
-                variant={"outline-dark"}
-                className="mt-4 p-2"
-                onClick={() => setDeviceVisible(true)}
-            >
-                Registration Championships
-            </Button>
 
             <Button
                 variant={"outline-dark"}
                 className="mt-4 p-2"
                 onClick={() => setUserdataVisible(true)}
             >
-                Userdata
+                Set data user
+            </Button>
+
+            <Button
+                variant={"outline-dark"}
+                className="mt-4 p-2"
+                onClick={() => setDeviceVisible(true)}
+            >
+                Registration Championships
             </Button>
 
             {/*<CreateBrand show={brandVisible} onHide={() => setBrandVisible(false)}/>*/}

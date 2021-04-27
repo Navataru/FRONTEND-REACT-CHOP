@@ -38,6 +38,7 @@ const NavBar = observer(() => {
                                         <Button
                                             variant={"outline-light"}
                                             onClick={() => history.push(ADMIN_ROUTE)}
+                                            className="ml-2"
                                         >
                                             Registration championship
                                         </Button>
